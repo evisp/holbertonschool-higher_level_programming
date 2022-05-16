@@ -3,5 +3,7 @@
 
 
 class Square:
-        """ empty class Square"""
-        pass
+        """ class Square"""
+        def __init__(self, size):
+                """private instance size"""
+                self.__size = size
