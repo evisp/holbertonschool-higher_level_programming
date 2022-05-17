@@ -1,7 +1,9 @@
+#!/usr/bin/python3
+
 class Node:
     def __init__(self, data, next_node=None):
         self.data = data
-        self.next_data = next_data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -32,7 +34,7 @@ class SinglyLinkedList:
         new_node = Node(value)
         if self.__head is None:
             new_node.next_node = None
-            self.__head = new
+            self.__head = new_node
         elif self.__head.data > value:
             new_node.next_node = self.__head
             self.__head = new_node
@@ -41,7 +43,7 @@ class SinglyLinkedList:
             while (tmp.next_node is not None and tmp.next_node.data < value):
                 tmp = tmp.next_node
             new_node.next_node = tmp.next_node
-            tmp.next_node = new
+            tmp.next_node = new_node
 
     def __str__(self):
         values = []
