@@ -63,3 +63,23 @@ If one or both arguments are not int or float a TypeError is raised
    >>> add_integer(not_defined)
    Traceback (most recent call last):
    NameError: name 'not_defined' is not defined
+
+If infinity is provided as a value, function will fail
+
+   >>> add_integer(float('inf'))
+   Traceback (most recent call last):
+   OverflowError: cannot convert float infinity to integer
+
+   >>> add_integer(2, float('inf'))
+   Traceback (most recent call last):
+   OverflowError: cannot convert float infinity to integer
+
+Similarly with not numbers, NaN
+
+   >>> add_integer(float('nan'))
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
+
+   >>> add_integer(2, float('nan'))
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
