@@ -9,7 +9,7 @@ class Rectangle:
     number_of_instances = 0
     #class attribyte print_symbol
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """
         Initialization of a rectangle object 
@@ -63,7 +63,7 @@ class Rectangle:
             return ""
         for h in range(self.__height):
             for w in range(self.__width):
-                rect.append(str(print_symbol))
+                rect.append(str(self.print_symbol))
             if h != self.__height - 1:
                 rect.append("\n")
         return "".join(rect)
