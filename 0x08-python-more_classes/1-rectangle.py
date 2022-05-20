@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 class Rectangle:
+
+    """ this is a class rectangle """
     
     def __init__(self, width=0, height=0):
         self.width = width
