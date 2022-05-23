@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+def max_integer(list=[]):
+
+    if len(list) == 0:
+        return None
+
+    largest = list[0]
+    for value in range(len(list)):
+        if list[value] > largest:
+            largest = list[value]
+
+    return largest
