@@ -35,22 +35,18 @@ return a TypeError if ``value`` is not an integer
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
 
-	>>> geometry = BaseGeometry()
 	>>> geometry.integer_validator("another invalid", True)
     	Traceback (most recent call last):
     	TypeError: another invalid must be an integer
     
-	>>> geometry = BaseGeometry()
 	>>> geometry.integer_validator("shape", [1])
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
 
-	>>> geometry = BaseGeometry()
 	>>> geometry.integer_validator("shape", (1,))
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
 
-	>>> geometry = BaseGeometry()
 	>>> geometry.integer_validator("shape", {1: 1})
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
