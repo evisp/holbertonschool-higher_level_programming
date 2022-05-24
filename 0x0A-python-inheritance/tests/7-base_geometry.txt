@@ -1,0 +1,48 @@
+Module 7-base_geometry.py defines a base geometry class
+
+Usage:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> geometry = BaseGeometry()
+	>>> type(geometry)
+	<class '7-base_geometry.BaseGeometry'>
+
+No arguments can be passed to the class
+
+   	>>> geometry = BaseGeometry(None)
+	Traceback (most recent call last):
+    	TypeError: object() takes no parameters
+
+BaseGeometry class has two methods
+
+Method area which returns an exception
+
+   	>>> geometry = BaseGeometry()
+	>>> geometry.area()
+	Traceback (most recent call last):
+    	Exception: area() is not implemented
+
+Method integer_validator
+returns nothing if ``value`` is a valid integer
+	
+	>>> geometry = BaseGeometry()
+	>>> bg.integer_validator("shape", 1)
+
+return a TypeError if ``value`` is not an integer
+
+	>>> geometry = BaseGeometry()
+	>>> bg.integer_validator("shape", "one")
+	Traceback (most recent call last):
+    	TypeError: shape must be an integer
+	>>> bg.integer_validator("shape", True)
+	Traceback (most recent call last):
+    	TypeError: shape must be an integer
+	>>> bg.integer_validator("shape", [1])
+	Traceback (most recent call last):
+    	TypeError: shape must be an integer
+	>>> bg.integer_validator("shape", (1,))
+	Traceback (most recent call last):
+    	TypeError: shape must be an integer
+	>>> bg.integer_validator("shape", {1: 1})
+	Traceback (most recent call last):
+    	TypeError: shape must be an integer
