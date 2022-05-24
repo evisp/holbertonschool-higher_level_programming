@@ -26,23 +26,23 @@ Method integer_validator
 returns nothing if ``value`` is a valid integer
 	
 	>>> geometry = BaseGeometry()
-	>>> bg.integer_validator("shape", 1)
+	>>> geometry.integer_validator("shape", 1)
 
 return a TypeError if ``value`` is not an integer
 
 	>>> geometry = BaseGeometry()
-	>>> bg.integer_validator("shape", "one")
+	>>> geometry.integer_validator("shape", "one")
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
-	>>> bg.integer_validator("shape", True)
+	>>> geometry.integer_validator("shape", True)
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
-	>>> bg.integer_validator("shape", [1])
+	>>> geometry.integer_validator("shape", [1])
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
-	>>> bg.integer_validator("shape", (1,))
+	>>> geometry.integer_validator("shape", (1,))
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
-	>>> bg.integer_validator("shape", {1: 1})
+	>>> geometry.integer_validator("shape", {1: 1})
 	Traceback (most recent call last):
     	TypeError: shape must be an integer
