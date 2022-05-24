@@ -1,0 +1,52 @@
+Module ``1-my_list``
+
+Importing:
+	>>> MyList = __import__('1-my_list').MyList
+
+Usage:
+
+MyList can be initialized with no arguments as in
+	>>> my_list = MyList()
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
+	>>> print(my_list)
+	[]
+
+Or with one argument which is a list of elements as in
+   	>>> my_list = MyList([1, 2, 3])
+	>>> print(my_list)
+	[1, 2, 3]
+
+If None is provided as argument, a TypeError is expected
+   	>>> my_list = MyList(None)
+	Traceback (most recent call last):
+	TypeError: 'NoneType' object is not iterable
+
+MyList inherits methods of class list. For example
+
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> my_list.append(2)
+       >>> my_list.append(3)
+       >>> my_list.remove(3)
+       >>> print(my_list)
+       [1, 2]
+
+MyList can sort the objects using the method print_sorted as in
+
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> my_list.append(0)
+       >>> my_list.append(2)
+       >>> my_list.print_sorted()
+       [0, 1, 2]
+
+MyList works with other iterable objects such as string
+
+       >>> my_list = MyList()
+       >>> my_list.append("Jack")
+       >>> my_list.append("Sparrow")
+       >>> my_list.append("Captain")
+       >>> my_list.print_sorted()
+       ["Captain", "Jack", "Sparrow"]
