@@ -49,4 +49,4 @@ MyList works with other iterable objects such as string
        >>> my_list.append("Sparrow")
        >>> my_list.append("Captain")
        >>> my_list.print_sorted()
-       ["Captain", "Jack", "Sparrow"]
+       ['Captain', 'Jack', 'Sparrow']
