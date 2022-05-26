@@ -36,11 +36,23 @@ return a TypeError if ``value`` is not an integer
     	TypeError: shape must be an integer
 	
 	>>> bg = BaseGeometry()
-    	>>> bg.integer_validator("my_int", {"key": 8})
+    	>>> bg.integer_validator("shape", {"key": 1})
     	Traceback (most recent call last):
-    	TypeError: my_int must be an integer
+    	TypeError: shape must be an integer
 
     	>>> bg = BaseGeometry()
-    	>>> bg.integer_validator("my_int", True)
+    	>>> bg.integer_validator("shape", True)
     	Traceback (most recent call last):
-    	TypeError: my_int must be an integer
+    	TypeError: shape must be an integer
+
+In case of not providing the correct number of arguments, a TypeError is raised
+
+   	>>> bg = BaseGeometry()
+    	>>> bg.integer_validator()
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    
+	>>> bg = BaseGeometry()
+    	>>> bg.integer_validator("my_int")
+    	Traceback (most recent call last):
+    	TypeError: integer_validator() missing 1 required positional argument: 'value'
