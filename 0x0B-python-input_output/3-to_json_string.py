@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-""" function definition """
+"""Defines a string-to-JSON function."""
 import json
 
 
 def to_json_string(my_obj)::
     """ function definition """
-    return json.dump(my_obj)
+    return json.dumps(my_obj)
