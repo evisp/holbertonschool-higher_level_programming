@@ -24,8 +24,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """ string representation """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
-                                                 self.y, self.width)
+        return f"[Square] ({self.id} {self.x}/{self.y} - {self.width})"
 
     def update(self, *args, **kwargs):
         """ public method update definition """
