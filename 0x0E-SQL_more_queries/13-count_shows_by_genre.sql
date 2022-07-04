@@ -1,4 +1,5 @@
---insytead of a comment
+-- insytead of a comment
+-- this is it
 SELECT g.name AS genre,
        COUNT(*) AS number_of_shows
   FROM tv_genres AS g
