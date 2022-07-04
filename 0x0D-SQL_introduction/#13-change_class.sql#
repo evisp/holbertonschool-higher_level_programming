@@ -1,4 +1,4 @@
 -- instead of a comment.
-SELECT score, name
+DELETE *
 FROM second_table
-ORDER BY score DESC
+WHERE 
