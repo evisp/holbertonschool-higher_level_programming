@@ -1,0 +1,12 @@
+#!/usr/bin/node
+
+const numbers = process.argv;
+
+if (values.length <= 3) {
+    console.log('0');
+} else {
+    values.sort((a, b) => a - b);
+
+    const valuesArray = values.slice(values.length - 2);
+    console.log(valuesArray[0]);
+}
