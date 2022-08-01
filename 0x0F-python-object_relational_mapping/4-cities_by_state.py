@@ -11,9 +11,8 @@ if __name__ == '__main__':
                                 db=argv[3],
                                 charset="utf8")
     cur = connection.cursor()
-    search = argv[4]
-    query = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
-    cur.execute(query, (search,))
+    query = "SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.id = states.id"
+    cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
