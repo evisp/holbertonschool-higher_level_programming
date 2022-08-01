@@ -11,7 +11,7 @@ if __name__ == '__main__':
                                 db=argv[3],
                                 charset="utf8")
     cur = connection.cursor()
-    query = "SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.id = states.id"
+    query = "SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON states.id = cities.id"
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
