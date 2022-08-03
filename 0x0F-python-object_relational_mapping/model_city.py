@@ -2,16 +2,12 @@
 """
 Ignoring SQL and trusting the ORM magic
 """
-
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
-""" instance """
+from model_state import Base, State
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 class City(Base):
-    """ class City inherits from Base """
+    """ City class inherits from Base """
     __tablename__ = 'cities'
     id = Column(Integer, autoincrement="auto", primary_key=True,
                 nullable=False)
