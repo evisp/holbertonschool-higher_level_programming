@@ -70,3 +70,53 @@ docker run extended-hello-alpine cat /app/config.txt
 ```
 
 You should see `Welcome to Docker!` printed in the terminal, confirming that the config.txt file is correctly copied into the container.
+
+## 2. Automate Container Image Build and Push Using GitHub Actions
+
+### Preconditions
+- Make sure you have a personal access token with the necessary privileges
+- Add the `PAT` as a GitHub Secret:
+    - In your GitHub repository, go to `Settings > Secrets and variables > Actions` and in `New repository secret` add your PAT
+
+### Step 1. Set Up GitHub Actions Workflow
+- Create a GitHub Actions Workflow:
+    - Create a file named `docker-image.yml` in `.github/workflows/`.
+    - Add the following content to `docker-image.yml`
+
+```bash
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker Image
+        run: docker build -t ghcr.io/${{ github.repository_owner }}/holbertonschool_higher_level_programming:latest -f devops_essentials/github_actions/Dockerfile devops_essentials/github_actions
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Push Docker Image
+        run: docker push ghcr.io/${{ github.repository_owner }}/holbertonschool_higher_level_programming:latest
+```
+- Stage, commit, and push your changes to GitHub
+
+- Verify the Workflow Execution
+    - Go to the Actions tab in your GitHub repository.
+    - You should see the workflow running. Monitor the workflow to ensure it completes successfully.
