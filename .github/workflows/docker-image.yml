@@ -29,3 +29,4 @@ jobs:
           context: ./devops_essentials/github_actions
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/docker-alpine-hello:latest
+    
