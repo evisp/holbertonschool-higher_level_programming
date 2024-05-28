@@ -26,6 +26,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./devops_essentials/github_actions
+          context: devops_essentials/github_actions
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/docker-alpine-hello:latest
+
+      - name: Verify config.txt content
+        run: |
+          cat devops_essentials/github_actions/config.txt
