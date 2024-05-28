@@ -13,10 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Change Directory
-        run: cd devops_essentials
-
       - name: Build Docker Image
+        working-directory: devops_essentials
         run: docker build -t ${{ github.repository_owner }}/holbertonschool-higher_level_programming:latest .
 
       - name: Login to GitHub Container Registry
