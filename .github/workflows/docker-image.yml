@@ -25,6 +25,5 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
-
       - name: Push Docker Image
         run: docker push ${{ github.repository_owner }}/holbertonschool_higher_level_programming:latest
