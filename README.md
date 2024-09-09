@@ -1,5 +1,10 @@
 # PLD - Practice
 
+## Table of Contents
+0. [Week 0: Hello World, Conditions, Loops, Functions](#week-0-hello-world-conditions-loops-functions)
+1. [Week 1: To Be Added](#week-1-to-be-added)  <!-- Placeholder for future weeks -->
+---
+
 ## Week 0: Hello World, Conditions, Loops, Functions
 
 ### Hello World 
@@ -59,3 +64,5 @@
 
 #### Final Integration Task (Bonus)
 - Combine these functions into a small interactive program where the user is prompted to choose which task to perform (via menu selection).
+
+## Week 1: To Be Added
